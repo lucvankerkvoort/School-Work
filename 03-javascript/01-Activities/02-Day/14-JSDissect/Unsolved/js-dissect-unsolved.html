@@ -9,35 +9,50 @@
   <body>
     <script type="text/javascript">
 
+// These are the questions we are going to ask the user
       var userName = prompt("What's your name?");
       var confirmCats = confirm("Do you like cats?");
 
+// These are our starting variables that we set
       var petName = "Meeses";
       var petType = "Tuxedo Cat";
       var petAge = 5;
       var petIsCat = true;
 
+// We check if the user likes cats
       if (confirmCats) {
+        // if it does we alert them the pet name, pet type and pet age
         alert(petName + " " + petType + " " + petAge);
       }
+      // if it doesn't we print this message
       else {
         alert("You don't get my cat's information");
       }
 
+      // if the pet is a cat
       if (petIsCat) {
+
+        // we alert "my pet is a cat"
         alert("My pet is a cat");
       }
       else {
+        // otherwise
         alert("My pet is not a cat");
       }
 
+      // if the variable petAge is not equal to 7
       if (petAge !== 7) {
+        // we show the following message
         alert("My pet is not 7 years old");
       }
 
+
+      // If the variable petAge is 5
       if (petAge === 5) {
+        // we print this message
         alert("My pet is 5 years old");
       }
+      // if the petAge variable is smaller than 5
       else if (petAge < 5) {
         alert("My pet is less than 5 years old");
       }
