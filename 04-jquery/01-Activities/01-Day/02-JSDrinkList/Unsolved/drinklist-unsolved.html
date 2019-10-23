@@ -15,31 +15,50 @@
   <script type="text/javascript">
 
     // Array holds all of the drinks available
-    var drinkList = [
-      "Coffee: $5",
-      "Espresso: $7",
-      "Cappuccino: $6",
-      "Latte: $4",
-      "Tea: $3",
-      "Ice Coffee: $6",
-      "Ice Espresso: $8",
-      "Ice Latte: $6",
-      "Ice Tea: $4"
-    ];
+   <div id="drink-options"></div>
 
-    // 1. Create code that "grabs" the div with the matching id (#drink-options);
-    // ...
+    <script type="text/JavaScript">
 
+                      	const drinkList = [
+                        "Coffee: $5",
+                        "Espresso: $7",
+                        "Cappuccino: $6",
+                        "Latte: $4",
+                        "Tea: $3",
+                        "Ice Coffee: $6",
+                        "Ice Espresso: $8",
+                        "Ice Latte: $6",
+                        "Ice Tea: $4"
+                      ];
+                      // 1. Create code that "grabs" the div with the matching id (#drink-options);
+                      // ...
+                      const domElement = document.getElementById("drink-options");
 
-    // ...
+      //  Map functionality
+            		drinkList.map(drink => {
+            		const drinks = document.createElement("p")
 
+            		drinks.textContent = drink
 
-    // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
-    // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
-    // ...
+            		domElement.appendChild(drinks)
+      					})
 
+      // forEach functionality
+                  drinkList.forEach(drink => {
+                 const paragraph = document.createElement("p");
+                 paragraph.textContent = drink;
+                 domElement.appendChild(paragraph);
+      			});
 
-    // ...
+      // for loop
+
+      for(let i = 0; i < drinkList.length; i++){
+      	const paragraph = document.createElement("p")
+
+      	paragraph.textContent = drinkList[i]
+
+      	domElement.appendChild(paragraph);
+      }
 
   </script>
 
