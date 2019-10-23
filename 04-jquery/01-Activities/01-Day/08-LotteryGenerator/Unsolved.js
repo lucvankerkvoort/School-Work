@@ -29,6 +29,14 @@
       </div>
     </div>
 
+    <!-- Using the code from the previous random number generator as a starting point, create a lottery generator.
+
+In our case, the lottery number generator should pick 9 random numbers between 0-9 and output as one number. As an example: 886563264.
+
+Display this number in the random-number div.
+
+Then when a user clicks again, have the code create a new row with the latest number at the top. -->
+
     <!-- Here we have div called "random-number" where our random number will go -->
     <h1 class="text-center" id="random-number"></h1>
 
@@ -37,9 +45,12 @@
         // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
         // ...
         $("#random-button").on("click", () => {
-          const randomNumber = Math.floor(Math.random() * 1000);
-          console.log(randomNumber);
-          $("#random-button").text(randomNumber);
+          let lottery = "";
+          for (let i = 0; i < 9; i++) {
+            const randomNumber = Math.floor(Math.random() * 10);
+            lottery += randomNumber;
+          }
+          $("#random-number").text(lottery);
         });
         // ...
       });
