@@ -12,23 +12,37 @@
   <div id="drink-options"></div>
 
   <script type="text/javascript">
+<script type="text/javascript">
+      const drinkList = [
+        "Coffee: $5",
+        "Espresso: $7",
+        "Cappuccino: $6",
+        "Latte: $4",
+        "Tea: $3",
+        "Ice Coffee: $6",
+        "Ice Espresso: $8",
+        "Ice Latte: $6",
+        "Ice Tea: $4"
+      ];
 
-    var drinkList = [
-      "Coffee: $5",
-      "Espresso: $7",
-      "Cappuccino: $6",
-      "Latte: $4",
-      "Tea: $3",
-      "Ice Coffee: $6",
-      "Ice Espresso: $8",
-      "Ice Latte: $6",
-      "Ice Tea: $4"
-    ];
+      const drinkDiv = $("#drink-options");
+      for (let i = 0; i < drinkList.length; i++) {
+        const paragraph = $("<p>");
+        paragraph.html(`${drinkList[i]}`);
+        drinkDiv.append(paragraph);
+      }
 
-    // Using JavaScript programmatically append each drinkList item to the "drink-options" div
-    // HINT: you will need a for loop to go over each element in the list
+      drinkList.forEach(drink => {
+        const paragraph = $("<p>" + drink + "</p>");
+        drinkDiv.append(paragraph);
+      });
 
-
+      drinkList.map(drink => {
+        const paragraph = $("<p>" + drink + "</p>");
+        drinkDiv.append(paragraph);
+      });
+    
+    </script>
   </script>
 
 </body>
