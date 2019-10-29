@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>lexicalScope</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>lexicalScope</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // Run this program. Then turn to the person next to you and answer the following questions:
+      // 1. What is the difference (in output) between Situation 1 and Situation 2?
+      // 2. Why are the alert messages different? (Hint: Look for syntax differences)
 
-  <script type="text/javascript">
+      // Situation 1
+      // ------------------------------------------
+      var myVar1 = 1;
 
-    // Run this program. Then turn to the person next to you and answer the following questions:
-    // 1. What is the difference (in output) between Situation 1 and Situation 2?
-    // 2. Why are the alert messages different? (Hint: Look for syntax differences)
+      function a1() {
+        myVar1 = 5 - 3;
+        b1();
+        alert("Q1 | a: " + myVar1);
+      }
 
-    // Situation 1
-    // ------------------------------------------
-    var myVar1 = 1;
+      function b1() {
+        alert("Q1 | b: " + myVar1);
+      }
+      a1();
 
-    function a1() {
-      myVar1 = 5 - 3;
-      b1();
-      alert("Q1 | a: " + myVar1);
-    }
+      // What happens here is that the variable MyVar1 gets manipulated inside of the function.
+      // This means that we change the value of it. Which causes myVar1 to have a different outcome then the original hence being logged by both functions.
 
-    function b1() {
-      alert("Q1 | b: " + myVar1);
-    }
-    a1();
+      // Situation 2
+      // ------------------------------------------
+      var myVar2 = 1;
 
+      function a2() {
+        var myVar2 = 5 - 3;
+        b2();
+        alert("Q2 | a: " + myVar2);
+      }
 
-    // Situation 2
-    // ------------------------------------------
-    var myVar2 = 1;
+      function b2() {
+        alert("Q2 | b: " + myVar2);
+      }
+      a2();
 
-    function a2() {
-      var myVar2 = 5 - 3;
-      b2();
-      alert("Q2 | a: " + myVar2);
-    }
-
-    function b2() {
-      alert("Q2 | b: " + myVar2);
-    }
-    a2();
-
-  </script>
-</body>
+      // Here myVar2 gets created twice. Function a2 creates a new variable named myVar2 but because we execute the function b2 first, b2 takes the initial myVar2 and logs 1
+      // inside function a2 the newly created myvar gets logged by the alert inside function a2
+    </script>
+  </body>
 </html>
