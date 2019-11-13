@@ -9,21 +9,23 @@
   <body>
     <script type="text/javascript">
       const bands = [
-        "metallica",
-        "acdc",
+        "michael jackson",
+        "biggie smalls",
+        "2pac",
         "red hot chili peppers",
-        "jay-z",
-        "beyonce"
+        "imagine dragons"
       ];
 
-      let bandQuestion = prompt("What is your Favorite Band?");
+      let bandQuestion = prompt("What is your favorite band?");
+
       let answer = bandQuestion.toLowerCase();
 
       console.log(answer);
-      if (bands.indexOf(answer) !== -1) {
-        alert("YEAH I LOVE THEM!!!!");
+
+      if (bands.indexOf(answer) >= 0) {
+        alert("YEAH I LOVE THEM!!");
       } else {
-        alert("Nah, They're pretty lame");
+        alert("Nah. They're pretty lame.");
       }
     </script>
   </body>
