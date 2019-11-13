@@ -8,20 +8,20 @@
   </head>
   <body>
     <script type="text/javascript">
-      const steak = confirm("Do You Eat Steak?");
+      const steak = confirm("Do you eat steak?");
 
       if (steak) {
-        alert("Here's a Steak Sandwich!");
+        document.write("Here's a Steak Sandwich!");
       } else {
-        alert("Here's a Tofu Stir-Fry!");
+        document.write("Here's a Tofu Stir-Fry!");
       }
 
-      const age = prompt("What is your age?");
+      const age = prompt("What is your birth year?");
 
-      if (parseInt(age) < 21) {
-        alert("No Sake for you!");
+      if (parseInt(age) < 1998) {
+        document.write("Here you go! have some Sake");
       } else {
-        alert("WOOOHHOOO Let's Party!!!");
+        document.write("No Sake for you!!!");
       }
     </script>
   </body>
