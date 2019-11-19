@@ -1,38 +1,47 @@
 import React from "react";
 
 class CrystalCollecter extends React.Component {
+  state = {
+    currentScore: 0
+  };
   endResult = Math.floor(Math.random() * 101) + 19;
-  currentScore = 0;
-  crystalOne = Math.floor(Math.random() * 12);
-  crystalTwo = Math.floor(Math.random() * 12);
-  crystalThree = Math.floor(Math.random() * 12);
+  crystalOne = Math.floor(Math.random() * 11) + 1;
+  crystalTwo = Math.floor(Math.random() * 11) + 1;
+  crystalThree = Math.floor(Math.random() * 11) + 1;
+  message = "";
 
   addingScore = event => {
-    let element = event.target;
-
-    console.log(element.value);
     //   add Scores using the click on the
+
+    let element = event.target;
+    let value = element.getAttribute("value");
+    this.setState({ currentScore: this.state.currentScore + parseInt(value) });
   };
 
-  game = () => {
-    // Setup the game conditionals and show the winning part of the game
-    if (this.endResult === this.currentScore) {
-      alert("You Win");
-    }
+  reset = () => {
+    this.endResult = Math.floor(Math.random() * 101) + 19;
+    this.crystalOne = Math.floor(Math.random() * 11) + 1;
+    this.crystalTwo = Math.floor(Math.random() * 11) + 1;
+    this.crystalThree = Math.floor(Math.random() * 11) + 1;
+    this.message = "";
+    this.setState({ currentScore: 0 });
   };
   render() {
-    console.log(
-      "endResult",
-      this.endResult,
-      "crystalOne",
-      this.crystalOne,
-      "crystalTwo",
-      this.crystalTwo,
-      "crystalThree",
-      this.crystalThree
-    );
+    if (this.endResult === this.state.currentScore) {
+      this.message = "You Win!!!";
+      setTimeout(() => {
+        this.reset();
+      }, 2000);
+    } else if (this.endResult < this.state.currentScore) {
+      this.message = "You Lose!!";
+      setTimeout(() => {
+        this.reset();
+      }, 2000);
+    }
     return (
       <div className="crystalCollector">
+        <h1>Crystal Collecter</h1>
+        <h1>{this.message}</h1>
         <div className="game">
           <div className="images">
             <div
@@ -51,9 +60,10 @@ class CrystalCollecter extends React.Component {
               value={this.crystalThree}
             ></div>
           </div>
+          <p></p>
           <div className="scores">
-            <p>Score to Reach: {this.endResult} </p>
-            <p>Current Score: {this.currentScore} </p>
+            <h1>Score to Reach: {this.endResult} </h1>
+            <h1>Current Score: {this.state.currentScore} </h1>
           </div>
         </div>
       </div>
