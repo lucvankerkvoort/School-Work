@@ -1,0 +1,31 @@
+.crystalCollector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./Images/crystal-mine.jpg");
+  height: 100vh;
+  color: white;
+}
+
+.images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid white;
+  height: 50vh;
+}
+
+.scores {
+  border: 2px solid white;
+}
+
+.game {
+  height: 50vh;
+  width: 50vw;
+}
+
+.crystal {
+  height: 30%;
+  width: 20%;
+  background: gold;
+}
