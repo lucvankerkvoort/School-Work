@@ -10,6 +10,9 @@ var audio = new Audio("raven.mp3");
 
 // ---------------------
 // CODE STEP TWO HERE
+setTimeout(fiveSeconds, 5000);
+setTimeout(tenSeconds, 10000);
+setTimeout(timeUp, 15000);
 // ---------------------
 
 // Step 3:
