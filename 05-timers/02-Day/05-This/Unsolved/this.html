@@ -25,6 +25,8 @@
 
       //  1. What will be console logged out? What is *this* in this case?
       console.log(this);
+      
+//       The Window
 
     };
 
@@ -34,6 +36,7 @@
 
       //  2. What will be console logged out? What is *this* in this case?
       console.log(this);
+//       The element with Id of Button
     });
 
     var bob = {
@@ -42,15 +45,17 @@
       whoIsBob: function() {
         console.log(this);
       },
+//       The object bob
 
       //  3. Put something inside of the following function so that it works
       fullName: function() {
-
+        console.log(this.firstName + " " + this.lastName);
       }
     };
 
     //  4. What will the console log output if the next function gets called?
     bob.whoIsBob();
+//       The object bob
 
     //  5. Fill in the code inside the fullName function above
     //     so that the below code console.logs out Bob's full name
